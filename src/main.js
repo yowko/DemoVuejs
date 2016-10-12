@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import ShoppingCartList from './components/ShoppingCartList'
+import $ from 'jquery'
 
 //data
 var productList = [];
@@ -23,4 +24,12 @@ new Vue({
   components:{ShoppingCartList},
   //render: h => h(App)
   template:'<ShoppingCartList :products="productList"></ShoppingCartList>'
+  ,mounted:function(){
+     var _self=this;
+     $.get("http://localhost:3511/api/CartList", function (result) {
+       //console.log(result);
+       _self.productList= result;
+     });
+
+   }
 })
