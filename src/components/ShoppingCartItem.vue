@@ -20,7 +20,7 @@
       </div>
 
       <div class="col-xs-4">
-        <input type="number" class="form-control input-sm" :value=product.Qty />
+        <input type="number" class="form-control input-sm" v-model:value=product.Qty />
       </div>
 
       <div class="col-xs-2">
